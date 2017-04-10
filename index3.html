@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>demo</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+    <!--<link rel="stylesheet" href="css/main.css">-->
+    <style>
+        /*I love me some border-box*/
+        * {
+            box-sizing: border-box;
+        }
+        /*This just stops me getting horizontal scrolling if anything overflows the width*/
+        body {
+            overflow-x: hidden;
+        }
+        /*Just removing default browser padding/margin*/
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            color: #FFFFFF;
+        }
+        /*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: darkgray;
+            font-size: 3rem;
+            position: relative;
+            z-index: 10;
+            height: 100px;
+        }
+        /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+        .container {
+            display: flex;
+            overflow: hidden;
+            height: 100vh;
+            margin-top: -100px;
+            padding-top: 100px;
+            position: relative;
+            width: 100%;
+            backface-visibility: hidden;
+            will-change: overflow;
+        }
+        /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+        WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+        */
+        .left,
+        .middle,
+        .right {
+            overflow: auto;
+            height: auto;
+            padding: .5rem;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+        }
+        /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+        .left::-webkit-scrollbar,
+        .middle::-webkit-scrollbar,
+        .slide-down::-webkit-scrollbar,
+        .right::-webkit-scrollbar {
+            display: none;
+        }
+        /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
+        .left {
+            width: 12.5rem;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .middle {
+            flex: 1;
+            color: black;
+            background: white;
+        }
+
+        .slide-down{
+            overflow: auto;
+            height: auto;
+            padding: .5rem;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            background: dimgray;
+            display: none;      //commented out for testing
+        }
+
+        .right {
+            width: 12.5rem;
+            background-color: lightgray;
+        }
+
+        .plus{
+            position:fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width:30px;
+            height:30px;
+            right:200px;
+            background:gray;
+            font-size: 30px;
+            top:100px;
+        }
+        .minus{
+            position:fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width:30px;
+            height:30px;
+            right:200px;
+            background:gray;
+            font-size: 30px;
+            top:130px;
+        }
+        .order-yours{
+            position:fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height:60px;
+            width: 100px;
+            background:orangered;
+            font-size: 20px;
+            color:white;
+            right:0;
+            margin-right: -100px;
+            top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="top">Top Content</div>
+<div class="container">
+    <!--<div class="Left">Left Content</div>-->
+    <div class="middle">
+
+        <div class="plus">+</div>
+        <div class="minus">-</div>
+        <div class="order-yours">Order<br />Yours</div>
+
+        <img src="assets/images/big-glasses.jpg" style="width: 100%; display: none">
+
+    </div>
+    <div class="slide-down">
+        slide down content here slide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content here
+    </div>
+
+    <div class="right">Right Content</div>
+</div>
+</body>
+</html>

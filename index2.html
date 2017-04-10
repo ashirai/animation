@@ -29,8 +29,8 @@
             margin: 0;
             color: #FFFFFF;
         }
-        /*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
-        .Top {
+
+        .top{
             display: flex;
             align-items: center;
             justify-content: center;
@@ -40,8 +40,18 @@
             z-index: 10;
             height: 100px;
         }
-        /*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
-        .Container {
+
+        .right{
+            position:fixed;
+            top: 100px;
+            height:100%;
+            background:grey;
+            width:200px;
+            right:0;
+            //margin-right: -200px;
+        }
+
+        .content{
             display: flex;
             overflow: hidden;
             height: 100vh;
@@ -51,47 +61,7 @@
             width: 100%;
             backface-visibility: hidden;
             will-change: overflow;
-        }
-        /*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
-        WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
-        */
-        .Left,
-        .Middle,
-        .Right {
-            overflow: auto;
-            height: auto;
-            padding: .5rem;
-            -webkit-overflow-scrolling: touch;
-            -ms-overflow-style: none;
-        }
-        /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
-        .Left::-webkit-scrollbar,
-        .Middle::-webkit-scrollbar,
-        .Right::-webkit-scrollbar {
-            display: none;
-        }
-        /*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
-        .Left {
-            width: 12.5rem;
-            background-color: lightgoldenrodyellow;
-        }
 
-        .Middle {
-            flex: 1;
-            color: black;
-        }
-
-        .Right {
-            width: 200px;
-            background-color: lightgray;
-
-
-            position:fixed;
-            height:100%;
-            //background:red;
-            //width:200px;
-            right:0px;
-            //margin-right: -200px;
         }
 
         .plus{
@@ -110,6 +80,15 @@
     </style>
 </head>
 <body>
+
+<div class="top"></div>
+<div class="content">
+    some content some contentsome contentsome contentsome contentsome contentsome contentsome contentsome content
+</div>
+<div class="right">
+    fdsa fdsa fdsa dfsa fdsa fdsa fdsa fdsa fdsa fdsa fdsa fdsa fdsa dfsa
+</div>
+
 <div class="Top">Top Content</div>
 <div class="Container">
     <!--<div class="Left">Left Content</div>-->
@@ -226,9 +205,8 @@
         fdsafdsafdsafdsafds <br/>
         fdsafdsafdsafdsafds <br/>
         fdsafdsafdsafdsafds <br/>
-        <div class="Right">Right Content</div>
     </div>
-
+    <div class="Right">Right Content</div>
 </div>
 </body>
 </html>

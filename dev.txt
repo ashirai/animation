@@ -1,0 +1,2 @@
+jquery right menu slide out
+http://jsfiddle.net/XNnHC/3/

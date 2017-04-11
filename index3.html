@@ -63,6 +63,10 @@
             -webkit-overflow-scrolling: touch;
             -ms-overflow-style: none;
         }
+
+        .middle{
+            padding: 0;
+        }
         /*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
         .left::-webkit-scrollbar,
         .middle::-webkit-scrollbar,
@@ -82,19 +86,26 @@
             background: white;
         }
 
-        .slide-down{
+        .details{
             overflow: auto;
             height: auto;
-            padding: .5rem;
             -webkit-overflow-scrolling: touch;
             -ms-overflow-style: none;
             background: dimgray;
-            display: none;      //commented out for testing
+        }
+
+        .slide-down{
+            overflow: auto;
+            height: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            background: blue;
         }
 
         .right {
-            width: 12.5rem;
-            background-color: lightgray;
+            width: 350px;
+            background-color: white;
+            padding: 15px;
         }
 
         .plus{
@@ -105,7 +116,7 @@
             cursor: pointer;
             width:30px;
             height:30px;
-            right:200px;
+            right:350px;
             background:gray;
             font-size: 30px;
             top:100px;
@@ -118,7 +129,7 @@
             cursor: pointer;
             width:30px;
             height:30px;
-            right:200px;
+            right:350px;
             background:gray;
             font-size: 30px;
             top:130px;
@@ -129,13 +140,13 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            height:60px;
-            width: 100px;
-            background:orangered;
+            height:100px;
+            width: 150px;
+            background: #ff6041;
             font-size: 20px;
             color:white;
             right:0;
-            margin-right: -100px;
+            margin-right: -150px;
             top: 100px;
 
         }
@@ -148,17 +159,46 @@
     <div class="middle">
 
         <div class="plus">+</div>
+
+
+        <div class="details">
+            <img src="assets/images/big-glasses.jpg" style="width: 100%">
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+            fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>fdsafdsafdsabr <br/>
+
+        </div>
+        <div class="slide-down">
+            slide down content here slide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content here
+        </div>
+
         <div class="minus">-</div>
-        <div class="order-yours">Order<br />Yours</div>
+        <div class="order-yours">ORDER<br />YOURS</div>
 
-        <img src="assets/images/big-glasses.jpg" style="width: 100%; display: none">
+
 
     </div>
-    <div class="slide-down">
-        slide down content here slide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content hereslide down content here
-    </div>
 
-    <div class="right">Right Content</div>
+    <div class="right">
+        <img src="assets/images/side-glass-info.png" alt="">
+    </div>
 </div>
 </body>
 </html>

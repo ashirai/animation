@@ -1,7 +1,9 @@
 $(document).ready(function()
 {
+    var headerHeight = 130;
     var rightNavWidth = 350;
     var orderYoursWidth = 150;
+    var plusWidth = 40;
     var isSlideDownVisible = false;
 
     //click [-]
@@ -9,8 +11,10 @@ $(document).ready(function()
         if(isSlideDownVisible){
             //when slide down is visible, [-] button behaves differently
             showSlideDown(false);
-            showPlus(true); //slide out hidden plus
-            showRightSection(true);
+            setTimeout(function(){
+                showPlus(true, plusWidth); //slide out hidden plus
+                showRightSection(true);
+            }, 800);
         }else{
             if($(this).css("margin-right") == "0px") {
                 //hide right Section
@@ -43,7 +47,7 @@ $(document).ready(function()
             //show slide down
             showSlideDown(true);
             //hide [+]
-            showPlus(false, 30);
+            showPlus(false, plusWidth);
         }else{
             //show right section
             showRightSection(true);
@@ -74,16 +78,17 @@ $(document).ready(function()
     }
 
     function showSlideDown(show){
-        isSlideDownVisible = show;
-        var headerHeight = 100;
         var contentHeight = $('body').innerHeight() - headerHeight;
         var objSideDown = $('.slide-down');
-        //offset slide as the same height as contentHeight (window height - header height)
-        objSideDown.css('margin-top', '-' + contentHeight + 'px');
-        //set slide height same as content height so that the height of slide matches the content height
-        objSideDown.height(contentHeight);
+        if(show){
+            //offset slide as the same height as contentHeight (window height - header height)
+            objSideDown.css('margin-top', '-' + contentHeight + 'px');
+            //set slide height same as content height so that the height of slide matches the content height
+            objSideDown.height(contentHeight);
+        }
         //now slide down
-        objSideDown.animate({"margin-top": (show ? '+' : '-') + '=' + contentHeight});
+        objSideDown.animate({"margin-top": (show ? '+' : '-') + '=' + contentHeight}, {duration: 700});
+        isSlideDownVisible = show;
     }
 
 });

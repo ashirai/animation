@@ -1,0 +1,1 @@
+To run this demo, upload: assets, scripts and index.html to your preferred hosting please
